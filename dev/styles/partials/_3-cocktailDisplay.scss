@@ -1,0 +1,112 @@
+/* ===== COCKTAIL DISPLAY ===== */
+
+.cocktailDisplay {
+    list-style: none;
+    clear: both;
+    width: 80%;
+    height: 80vh;
+    margin: 20px auto 0;
+    padding: 0;
+    /* Portrait tablet and small desktops */
+    @media (max-width: 940px) {
+        width: 85%;
+    }
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 768px) {
+        top: 20%;
+        position: relative;
+        top: -90px;
+    }
+    /* Landscape phones and down */
+    @media (max-width: 480px) {
+        width: 95%;
+        position: relative;
+        top: -140px;
+    }
+}
+
+.cocktailDisplay li {
+    width: calc(33.33% - 20px);
+    height: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    background: $fourthColour;
+    box-shadow: 0 0 3px $fourthColour;
+    position: relative;
+    &:nth-child(3n + 0) {
+        margin-right: 0;
+    }
+    /* Portrait tablet and small desktops */
+    @media (max-width: 940px) {
+        width: calc(33.33% - 10px)
+    }
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 768px) {
+        top: 20%;
+        width: calc(50% - 20px);
+        &:nth-child(3n + 0) {
+            margin-right: 10px;
+        }
+        &:nth-child(2n + 0) {
+            margin-right: 0px;
+        }   
+    }
+    /* Landscape phones and down */
+    @media (max-width: 480px) {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .btnShowInfo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 100%;
+        margin: 0;
+        padding: 5px 0;
+        background: $primaryColour;
+        color: $thirdColour;
+        box-shadow: 0 -1px 3px $fourthColour;
+        text-transform: uppercase;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        transition: color .3 ease;
+        &:hover {
+            color: $secondaryColour;
+        }
+    }
+    
+    .cocktailImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: opacity .3s ease;
+        box-shadow: 0 0 20px $fourthColour;
+        &:hover {
+            opacity: .2;
+        }
+        &:hover ~ h2.cocktailName  {
+            display: block;
+        }
+    }
+    h2.cocktailName {
+        margin: 0;
+        font-size: 2.5rem;
+        font-family: $secondaryColour;
+        color: $thirdColour;
+        text-shadow: 0 1px 1px $fourthColour;
+        text-transform: uppercase;
+        position: absolute;
+        pointer-events: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: none;
+    }
+
+
+}

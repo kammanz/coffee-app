@@ -1,0 +1,79 @@
+.alcoholOption {
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+    background: $fourthColour;
+    // box-shadow: 0 0 20px $fourthColour;
+    transition: all .3s cubic-bezier(.5, .2, .2, 1.2);
+    background: $secondaryColour;
+    box-shadow: 0 -2px 20px $fourthColour;
+
+    label {
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover > h2 {
+            color: $primaryColour;
+        }
+        h2 {
+            font-family: $primaryFontStyle;
+            letter-spacing: 1px;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            color: $fourthColour;
+            text-shadow: 0 0 .5px $thirdColour;
+            display: inline-block;
+            padding: 10px;
+            margin: 0 10px;
+            transition: all .3s cubic-bezier(.5, .2, .2, 1.2);
+            /* Landscape phones and down */
+            @media (max-width: 480px) {
+                display: block;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+    }
+}
+
+#page1 {
+    position: fixed;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow-y: scroll;
+    transition: all .5s cubic-bezier(.5, .2, .2, 1.2);
+    background: linear-gradient($secondaryOverlay, $secondaryOverlay), url(../../public/assets/coffeeBean1.png) bottom no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    div {
+        p.introText {
+            font-size: 2rem;
+            margin: 20px auto;
+            color: $thirdColour;/* Portrait tablet and small desktops */
+            @media (max-width: 940px) {
+            }
+            
+            /* Landscape phone to portrait tablet */
+            @media (max-width: 768px) {
+            }
+            
+            /* Landscape phones and down */
+            @media (max-width: 480px) {
+                font-size: 2.5rem;
+                margin: 10px auto 0;
+            }
+        }
+    }
+}
+
+
+
+
+
+
